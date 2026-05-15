@@ -52,13 +52,13 @@ export default function Certifications(): JSX.Element {
             {CERTIFICATIONS.map((cert) => (
               <div
                 key={cert.title}
-                className="bg-violet rounded-2xl px-8 py-8 transition-all hover:shadow-violet-5xl">
+                className="bg-purple-500 rounded-2xl px-8 py-8 transition-all hover:shadow-violet-5xl">
                 <div className="flex justify-between items-start mb-3">
                   <div>
                     <p className="font-bold text-xl text-white mb-1">{cert.title}</p>
                     <p className="text-pink font-semibold text-sm">{cert.issuer}</p>
                     {cert.credentialId && (
-                      <p className="text-xs text-purple-200 mt-1 italic">
+                      <p className="text-xs text-violet mt-1 italic">
                         Credential ID: {cert.credentialId}
                       </p>
                     )}
@@ -71,7 +71,9 @@ export default function Certifications(): JSX.Element {
                     Verify ↗
                   </a>
                 </div>
-                <p className="text-sm text-purple-100 leading-relaxed mb-5">{cert.description}</p>
+                <p className="text-sm text-white opacity-80 leading-relaxed mb-5">
+                  {cert.description}
+                </p>
                 <div className="flex flex-wrap gap-2">
                   {cert.skills.map((skill) => (
                     <span
