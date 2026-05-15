@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="380" viewBox="0 0 600 380">
+  <defs>
+    <linearGradient id="usOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0d1a"/>
+      <stop offset="100%" stop-color="#080810"/>
+    </linearGradient>
+    <linearGradient id="usTerm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0c16"/>
+      <stop offset="100%" stop-color="#09090f"/>
+    </linearGradient>
+    <linearGradient id="usPill" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer card -->
+  <rect width="600" height="380" rx="12" fill="url(#usOuter)" stroke="rgba(124,58,237,0.25)" stroke-width="1"/>
+
+  <!-- Terminal chrome bar -->
+  <rect x="10" y="10" width="580" height="28" rx="6" fill="#0a0a12"/>
+  <rect x="10" y="28" width="580" height="10" fill="#0a0a12"/>
+  <!-- Traffic light dots -->
+  <circle cx="30" cy="24" r="5" fill="#ff5f57"/>
+  <circle cx="50" cy="24" r="5" fill="#ffbd2e"/>
+  <circle cx="70" cy="24" r="5" fill="#28c840"/>
+  <!-- Terminal title -->
+  <text x="300" y="27" font-family="monospace, 'Courier New', Courier" font-size="11" fill="rgba(136,146,176,0.6)" text-anchor="middle">university-search-api — python main.py</text>
+
+  <!-- Terminal content area -->
+  <rect x="10" y="38" width="580" height="264" fill="url(#usTerm)"/>
+
+  <!-- Cursor line 1: GET request -->
+  <text x="26" y="62" font-family="monospace, 'Courier New', Courier" font-size="11" fill="rgba(52,211,153,0.8)">$</text>
+  <text x="40" y="62" font-family="monospace, 'Courier New', Courier" font-size="11" fill="rgba(167,139,250,0.7)">curl</text>
+  <text x="80" y="62" font-family="monospace, 'Courier New', Courier" font-size="11" fill="rgba(103,232,249,0.8)">http://localhost:8000/api/search</text>
+  <text x="380" y="62" font-family="monospace, 'Courier New', Courier" font-size="11" fill="rgba(251,191,36,0.7)">?q=computer+science</text>
+  <text x="26" y="76" font-family="monospace, 'Courier New', Courier" font-size="11" fill="rgba(251,191,36,0.7)">  &amp;country=germany</text>
+
+  <!-- Separator line -->
+  <line x1="26" y1="86" x2="575" y2="86" stroke="rgba(124,58,237,0.15)" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- HTTP Status line -->
+  <text x="26" y="103" font-family="monospace, 'Courier New', Courier" font-size="11" fill="rgba(136,146,176,0.5)">HTTP/1.1</text>
+  <text x="102" y="103" font-family="monospace, 'Courier New', Courier" font-size="11" fill="rgba(52,211,153,0.9)" font-weight="bold">200 OK</text>
+  <text x="180" y="103" font-family="monospace, 'Courier New', Courier" font-size="11" fill="rgba(136,146,176,0.35)">  Content-Type: application/json</text>
+
+  <!-- JSON opening brace -->
+  <text x="26" y="122" font-family="monospace, 'Courier New', Courier" font-size="12" fill="#f0f4ff">{</text>
+
+  <!-- "query" field -->
+  <text x="50" y="140" font-family="monospace, 'Courier New', Courier" font-size="12" fill="#a78bfa">"query"</text>
+  <text x="120" y="140" font-family="monospace, 'Courier New', Courier" font-size="12" fill="#f0f4ff">:</text>
+  <text x="132" y="140" font-family="monospace, 'Courier New', Courier" font-size="12" fill="#22d3ee">"computer science"</text>
+  <text x="290" y="140" font-family="monospace, 'Courier New', Courier" font-size="12" fill="rgba(136,146,176,0.4)">,</text>
+
+  <!-- "country" field -->
+  <text x="50" y="156" font-family="monospace, 'Courier New', Courier" font-size="12" fill="#a78bfa">"country"</text>
+  <text x="127" y="156" font-family="monospace, 'Courier New', Courier" font-size="12" fill="#f0f4ff">:</text>
+  <text x="139" y="156" font-family="monospace, 'Courier New', Courier" font-size="12" fill="#22d3ee">"germany"</text>
+  <text x="228" y="156" font-family="monospace, 'Courier New', Courier" font-size="12" fill="rgba(136,146,176,0.4)">,</text>
+
+  <!-- "results" count -->
+  <text x="50" y="172" font-family="monospace, 'Courier New', Courier" font-size="12" fill="#a78bfa">"results"</text>
+  <text x="127" y="172" font-family="monospace, 'Courier New', Courier" font-size="12" fill="#f0f4ff">:</text>
+  <text x="139" y="172" font-family="monospace, 'Courier New', Courier" font-size="12" fill="#fbbf24">47</text>
+  <text x="163" y="172" font-family="monospace, 'Courier New', Courier" font-size="12" fill="rgba(136,146,176,0.4)">,</text>
+
+  <!-- "universities" array key -->
+  <text x="50" y="188" font-family="monospace, 'Courier New', Courier" font-size="12" fill="#a78bfa">"universities"</text>
+  <text x="169" y="188" font-family="monospace, 'Courier New', Courier" font-size="12" fill="#f0f4ff">: [</text>
+
+  <!-- Entry 1 -->
+  <text x="74" y="204" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">{</text>
+  <text x="92" y="204" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#a78bfa">"name"</text>
+  <text x="148" y="204" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">:</text>
+  <text x="158" y="204" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#22d3ee">"TU Munich"</text>
+  <text x="258" y="204" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">,</text>
+  <text x="268" y="204" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#a78bfa">"rank"</text>
+  <text x="318" y="204" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">:</text>
+  <text x="328" y="204" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#fbbf24">1</text>
+  <text x="338" y="204" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">,</text>
+  <text x="348" y="204" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#a78bfa">"tuition"</text>
+  <text x="412" y="204" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">:</text>
+  <text x="422" y="204" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#22d3ee">"free"</text>
+  <text x="464" y="204" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">},</text>
+
+  <!-- Entry 2 -->
+  <text x="74" y="220" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">{</text>
+  <text x="92" y="220" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#a78bfa">"name"</text>
+  <text x="148" y="220" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">:</text>
+  <text x="158" y="220" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#22d3ee">"KIT"</text>
+  <text x="196" y="220" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">,</text>
+  <text x="206" y="220" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#a78bfa">"rank"</text>
+  <text x="256" y="220" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">:</text>
+  <text x="266" y="220" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#fbbf24">2</text>
+  <text x="276" y="220" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">,</text>
+  <text x="286" y="220" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#a78bfa">"tuition"</text>
+  <text x="350" y="220" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">:</text>
+  <text x="360" y="220" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#22d3ee">"$500/yr"</text>
+  <text x="426" y="220" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">},</text>
+
+  <!-- Entry 3 -->
+  <text x="74" y="236" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">{</text>
+  <text x="92" y="236" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#a78bfa">"name"</text>
+  <text x="148" y="236" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">:</text>
+  <text x="158" y="236" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#22d3ee">"TU Berlin"</text>
+  <text x="254" y="236" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">,</text>
+  <text x="264" y="236" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#a78bfa">"rank"</text>
+  <text x="314" y="236" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">:</text>
+  <text x="324" y="236" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#fbbf24">3</text>
+  <text x="334" y="236" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">,</text>
+  <text x="344" y="236" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#a78bfa">"tuition"</text>
+  <text x="408" y="236" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">:</text>
+  <text x="418" y="236" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#22d3ee">"free"</text>
+  <text x="460" y="236" font-family="monospace, 'Courier New', Courier" font-size="11" fill="#f0f4ff">}</text>
+
+  <!-- Closing brackets -->
+  <text x="50" y="252" font-family="monospace, 'Courier New', Courier" font-size="12" fill="#f0f4ff">]</text>
+  <text x="26" y="268" font-family="monospace, 'Courier New', Courier" font-size="12" fill="#f0f4ff">}</text>
+
+  <!-- Cursor blink -->
+  <rect x="38" y="272" width="8" height="14" rx="1" fill="#a78bfa" opacity="0.7"/>
+
+  <!-- Response time footer -->
+  <text x="400" y="290" font-family="monospace, 'Courier New', Courier" font-size="9" fill="rgba(52,211,153,0.4)">Response: 42ms · Python 3.11 · FastAPI</text>
+
+  <!-- Bottom label strip -->
+  <rect x="0" y="308" width="600" height="72" rx="12" fill="rgba(0,0,0,0.35)"/>
+  <rect x="0" y="308" width="600" height="4" fill="url(#usPill)"/>
+  <text x="20" y="335" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="700" fill="#f0f4ff">University Search API</text>
+  <text x="20" y="353" font-family="system-ui, sans-serif" font-size="10" fill="#8892b0">REST API · Smart filtering · University discovery</text>
+  <!-- Tech pills -->
+  <rect x="448" y="318" width="52" height="18" rx="9" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.35)" stroke-width="1"/>
+  <text x="474" y="330" font-family="system-ui, sans-serif" font-size="9" fill="#67e8f9" text-anchor="middle">Python</text>
+  <rect x="506" y="318" width="78" height="18" rx="9" fill="rgba(124,58,237,0.2)" stroke="rgba(124,58,237,0.4)" stroke-width="1"/>
+  <text x="545" y="330" font-family="system-ui, sans-serif" font-size="9" fill="#a78bfa" text-anchor="middle">REST API</text>
+</svg>

@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c4b5fd"/>
+      <stop offset="60%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0d14"/>
+      <stop offset="100%" stop-color="#0f0a1e"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.05"/>
+    </linearGradient>
+    <pattern id="dotGrid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="1.2" fill="#ffffff" opacity="0.035"/>
+    </pattern>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Base background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <!-- Dot grid texture -->
+  <rect width="1200" height="630" fill="url(#dotGrid)"/>
+
+  <!-- Right side glowing orb (background glow) -->
+  <ellipse cx="1050" cy="315" rx="280" ry="280" fill="radial-gradient(#7c3aed, transparent)" opacity="0.06"/>
+  <circle cx="1050" cy="315" r="220" fill="none" stroke="rgba(124,58,237,0.07)" stroke-width="1"/>
+  <circle cx="1050" cy="315" r="170" fill="none" stroke="rgba(6,182,212,0.07)" stroke-width="1"/>
+  <circle cx="1050" cy="315" r="120" fill="none" stroke="rgba(124,58,237,0.1)" stroke-width="1"/>
+  <circle cx="1050" cy="315" r="70" fill="rgba(124,58,237,0.05)" stroke="rgba(124,58,237,0.2)" stroke-width="1"/>
+
+  <!-- Diagonal code lines (subtle) -->
+  <line x1="720" y1="0" x2="1200" y2="630" stroke="rgba(124,58,237,0.05)" stroke-width="40"/>
+  <line x1="820" y1="0" x2="1200" y2="490" stroke="rgba(6,182,212,0.03)" stroke-width="20"/>
+
+  <!-- Left vertical accent bar -->
+  <rect x="72" y="58" width="4" height="514" rx="2" fill="url(#accentGrad)" opacity="0.7"/>
+
+  <!-- PS Monogram -->
+  <rect x="96" y="68" width="58" height="58" rx="10" fill="rgba(124,58,237,0.18)" stroke="rgba(124,58,237,0.55)" stroke-width="1.5"/>
+  <text x="125" y="108" font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-size="30" font-weight="900" fill="url(#accentGrad)" text-anchor="middle">PS</text>
+
+  <!-- Site URL top-right -->
+  <text x="1110" y="98" font-family="system-ui, -apple-system, monospace, sans-serif" font-size="15" fill="rgba(136,146,176,0.6)" text-anchor="end">proharsaha.vercel.app</text>
+
+  <!-- Main name -->
+  <text x="96" y="228" font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-size="78" font-weight="800" fill="url(#nameGrad)" letter-spacing="-2">Prohar Saha Polak</text>
+
+  <!-- Gradient underline -->
+  <rect x="96" y="240" width="620" height="4" rx="2" fill="url(#accentGrad)" opacity="0.85"/>
+
+  <!-- Title -->
+  <text x="96" y="297" font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-size="26" font-weight="400" fill="#a78bfa" letter-spacing="6">FULL STACK DEVELOPER</text>
+
+  <!-- Tagline -->
+  <text x="96" y="352" font-family="system-ui, -apple-system, Georgia, serif" font-size="20" font-style="italic" fill="rgba(136,146,176,0.85)">"Where clean code meets real-world impact."</text>
+
+  <!-- Location -->
+  <text x="96" y="400" font-family="system-ui, -apple-system, sans-serif" font-size="17" fill="rgba(136,146,176,0.7)">&#x1F4CD; Dhaka, Bangladesh · BRAC University</text>
+
+  <!-- Tech pills row -->
+  <!-- Django -->
+  <rect x="96" y="428" width="82" height="28" rx="14" fill="rgba(124,58,237,0.18)" stroke="rgba(124,58,237,0.45)" stroke-width="1"/>
+  <text x="137" y="446" font-family="system-ui, sans-serif" font-size="13" font-weight="500" fill="#a78bfa" text-anchor="middle">Django</text>
+
+  <!-- Next.js -->
+  <rect x="188" y="428" width="82" height="28" rx="14" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.4)" stroke-width="1"/>
+  <text x="229" y="446" font-family="system-ui, sans-serif" font-size="13" font-weight="500" fill="#67e8f9" text-anchor="middle">Next.js</text>
+
+  <!-- FastAPI -->
+  <rect x="280" y="428" width="82" height="28" rx="14" fill="rgba(124,58,237,0.18)" stroke="rgba(124,58,237,0.45)" stroke-width="1"/>
+  <text x="321" y="446" font-family="system-ui, sans-serif" font-size="13" font-weight="500" fill="#a78bfa" text-anchor="middle">FastAPI</text>
+
+  <!-- Python -->
+  <rect x="372" y="428" width="82" height="28" rx="14" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.4)" stroke-width="1"/>
+  <text x="413" y="446" font-family="system-ui, sans-serif" font-size="13" font-weight="500" fill="#67e8f9" text-anchor="middle">Python</text>
+
+  <!-- AWS -->
+  <rect x="464" y="428" width="68" height="28" rx="14" fill="rgba(251,191,36,0.12)" stroke="rgba(251,191,36,0.35)" stroke-width="1"/>
+  <text x="498" y="446" font-family="system-ui, sans-serif" font-size="13" font-weight="500" fill="#fbbf24" text-anchor="middle">AWS</text>
+
+  <!-- Bottom URL bar -->
+  <rect x="96" y="528" width="340" height="38" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <text x="116" y="553" font-family="monospace, 'Courier New', Courier" font-size="16" fill="rgba(136,146,176,0.7)">&#x1F310; proharsaha.vercel.app</text>
+
+  <!-- Geometric accent dots top-right -->
+  <circle cx="1148" cy="56" r="7" fill="#7c3aed" opacity="0.5"/>
+  <circle cx="1125" cy="56" r="5" fill="#06b6d4" opacity="0.4"/>
+  <circle cx="1108" cy="56" r="3.5" fill="#7c3aed" opacity="0.3"/>
+
+  <!-- Small grid squares decorative -->
+  <rect x="1080" y="520" width="10" height="10" rx="2" fill="rgba(124,58,237,0.3)"/>
+  <rect x="1096" y="520" width="10" height="10" rx="2" fill="rgba(6,182,212,0.2)"/>
+  <rect x="1112" y="520" width="10" height="10" rx="2" fill="rgba(124,58,237,0.15)"/>
+  <rect x="1080" y="536" width="10" height="10" rx="2" fill="rgba(6,182,212,0.15)"/>
+  <rect x="1096" y="536" width="10" height="10" rx="2" fill="rgba(124,58,237,0.2)"/>
+  <rect x="1112" y="536" width="10" height="10" rx="2" fill="rgba(6,182,212,0.3)"/>
+</svg>
