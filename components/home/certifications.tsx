@@ -21,6 +21,7 @@ const CERTIFICATIONS: Certification[] = [
   {
     title: 'Software Engineer Intern',
     issuer: 'HackerRank',
+    credentialId: '3c051b8580a4',
     verifyUrl: 'https://www.hackerrank.com/certificates/3c051b8580a4',
     description:
       'A verified role-based certification covering core software engineering competencies tested in real interview settings — demonstrating solid foundations in problem solving and SQL that meet the bar for entry-level engineering roles.',
@@ -52,16 +53,19 @@ export default function Certifications(): JSX.Element {
             {CERTIFICATIONS.map((cert) => (
               <div
                 key={cert.title}
-                className="bg-purple-500 rounded-2xl px-8 py-8 transition-all hover:shadow-violet-5xl">
-                <div className="flex justify-between items-start mb-3">
+                style={{
+                  background: 'linear-gradient(135deg, #1e2756 0%, #252d6e 100%)',
+                  borderColor: 'rgba(184,193,236,0.35)'
+                }}
+                className="rounded-2xl px-8 py-8 border hover:shadow-violet-5xl transition-shadow duration-300">
+                {/* Header row */}
+                <div className="flex justify-between items-start mb-4">
                   <div>
                     <p className="font-bold text-xl text-white mb-1">{cert.title}</p>
                     <p className="text-pink font-semibold text-sm">{cert.issuer}</p>
-                    {cert.credentialId && (
-                      <p className="text-xs text-violet mt-1 italic">
-                        Credential ID: {cert.credentialId}
-                      </p>
-                    )}
+                    <p className="text-xs text-violet mt-1 italic">
+                      Credential ID: {cert.credentialId}
+                    </p>
                   </div>
                   <a
                     href={cert.verifyUrl}
@@ -71,14 +75,25 @@ export default function Certifications(): JSX.Element {
                     Verify ↗
                   </a>
                 </div>
+
+                {/* Divider */}
+                <div style={{ borderColor: 'rgba(184,193,236,0.25)' }} className="border-t mb-4" />
+
+                {/* Description */}
                 <p className="text-sm text-white opacity-80 leading-relaxed mb-5">
                   {cert.description}
                 </p>
+
+                {/* Skill badges */}
                 <div className="flex flex-wrap gap-2">
                   {cert.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="text-xs bg-blue text-white px-3 py-1 rounded-full border border-violet">
+                      style={{
+                        background: 'rgba(35,41,70,0.8)',
+                        borderColor: 'rgba(184,193,236,0.4)'
+                      }}
+                      className="text-xs text-white px-3 py-1 rounded-full border">
                       {skill}
                     </span>
                   ))}

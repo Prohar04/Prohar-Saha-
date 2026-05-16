@@ -1,6 +1,5 @@
 import { Button, HeaderSmall } from '@shared-components';
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import { PersonalDetailsContext } from 'shared/utils/contexts';
 import { PersonalDetails } from 'shared/utils/types';
@@ -12,7 +11,6 @@ export default function Landing(): JSX.Element {
     stiffness: 80
   };
   const personalDetails: PersonalDetails = useContext(PersonalDetailsContext);
-  const router = useRouter();
   return (
     <>
       <img
@@ -51,7 +49,9 @@ export default function Landing(): JSX.Element {
                   <Button
                     type="solid"
                     text="Know More"
-                    onClickHandler={() => router.push('#skills')}
+                    onClickHandler={() =>
+                      document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })
+                    }
                   />
                 </div>
                 <div className="sm:col-span-1 xl:col-span-1">

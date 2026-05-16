@@ -3,7 +3,7 @@
 Personal portfolio website of **Prohar Saha Polak**, a Computer Science
 undergraduate at BRAC University, Dhaka, Bangladesh.
 
-**Live:** https://proharsaha.vercel.app
+**Live:** https://prohar-saha.vercel.app
 
 ---
 

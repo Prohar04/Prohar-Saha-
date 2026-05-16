@@ -1,7 +1,11 @@
 import dynamic from 'next/dynamic';
-import { getPersonalDetails, getProjectDetails } from '@utils/apiService';
-import { PersonalDetailsContext, ProjectDetailsContext } from '@utils/contexts';
-import { PersonalDetails, Project } from '@utils/types';
+import { getPersonalDetails, getProjectDetails, getCompanyDetails } from '@utils/apiService';
+import {
+  PersonalDetailsContext,
+  ProjectDetailsContext,
+  CompanyDetailsContext
+} from '@utils/contexts';
+import { PersonalDetails, Project, Company } from '@utils/types';
 import { Footer, Loader, Navbar, SocialBar } from '@shared-components';
 
 const HomePage = dynamic(() => import('../components/home/index'), {
@@ -12,16 +16,20 @@ const HomePage = dynamic(() => import('../components/home/index'), {
 type Props = {
   personalDetails: PersonalDetails;
   projectDetails: Project[];
+  companyDetails: Company[];
 };
-const Home = ({ personalDetails, projectDetails }: Props): JSX.Element => {
+
+const Home = ({ personalDetails, projectDetails, companyDetails }: Props): JSX.Element => {
   return (
     <>
       <PersonalDetailsContext.Provider value={personalDetails}>
         <ProjectDetailsContext.Provider value={projectDetails}>
-          <Navbar />
-          <SocialBar />
-          <HomePage />
-          <Footer />
+          <CompanyDetailsContext.Provider value={companyDetails}>
+            <Navbar />
+            <SocialBar />
+            <HomePage />
+            <Footer />
+          </CompanyDetailsContext.Provider>
         </ProjectDetailsContext.Provider>
       </PersonalDetailsContext.Provider>
     </>
@@ -31,9 +39,10 @@ const Home = ({ personalDetails, projectDetails }: Props): JSX.Element => {
 export default Home;
 
 export async function getStaticProps(): Promise<{
-  props: { personalDetails: PersonalDetails; projectDetails: Project[] };
+  props: { personalDetails: PersonalDetails; projectDetails: Project[]; companyDetails: Company[] };
 }> {
   const personalDetails = (await getPersonalDetails()) as PersonalDetails;
   const projectDetails = (await getProjectDetails()) as Project[];
-  return { props: { personalDetails, projectDetails } };
+  const companyDetails = (await getCompanyDetails()) as Company[];
+  return { props: { personalDetails, projectDetails, companyDetails } };
 }

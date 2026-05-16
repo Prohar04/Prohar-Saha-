@@ -1,13 +1,10 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import TextCards from 'shared/components/text-cards';
-import { Button, HeaderSmall, ProjectCard } from '@shared-components';
+import { HeaderSmall, ProjectCard } from '@shared-components';
 import { ProjectDetailsContext } from 'shared/utils/contexts';
 import { Project } from 'shared/utils/types';
 
 export default function Projects(): JSX.Element {
-  const router = useRouter();
   const projectDetails: Project[] = useContext(ProjectDetailsContext);
   return (
     <>
@@ -34,17 +31,8 @@ export default function Projects(): JSX.Element {
                   scratch
                 </h1>
                 <h1 className="mb-3 mt-6 text-4xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-1xl font-extrabold text-white leading-none ">
-                  Something he has <span className="text-pink font-bold">built.</span>
+                  Something Prohar has <span className="text-pink font-bold">built.</span>
                 </h1>
-                <div className="sm:ml-52 xl:ml-96 transform rotate-90">
-                  <Link href="#projects">
-                    <img
-                      src="/images/vectors/arrows-right.svg"
-                      alt="Next"
-                      className="hidden lg:block w-14 lg:mt-24 xl:mt-16 sm:mt-0 transform-all animate-translateright "
-                    />
-                  </Link>
-                </div>
               </div>
             </div>
             <div className="relative col-span-12 md:col-span-5 lg:col-span-6 flex flex-col">
@@ -72,7 +60,7 @@ export default function Projects(): JSX.Element {
             </div>
           </div>
         </div>
-        <div className="relative h-auto sm:h-auto md:h-auto ml-4 sm:mx-12 md:mx-16" id="projects">
+        <div className="relative h-auto sm:h-auto md:h-auto ml-4 sm:mx-12 md:mx-16">
           <div className="grid md:grid-cols-2 gap-4 place-items-center">
             {projectDetails.map((project: Project) => (
               <ProjectCard
@@ -81,13 +69,6 @@ export default function Projects(): JSX.Element {
                 filter={{ key: 'featured', value: true }}
               />
             ))}
-          </div>
-          <div className="flex justify-center mt-10 lg:mt-4">
-            <Button
-              type="solid"
-              text="Show me more! 🔥"
-              onClickHandler={() => router.push('/projects')}
-            />
           </div>
         </div>
       </div>

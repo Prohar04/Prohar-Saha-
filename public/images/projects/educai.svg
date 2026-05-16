@@ -1,129 +1,143 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="380" viewBox="0 0 600 380">
   <defs>
-    <linearGradient id="eaOuter" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0d1a2e"/>
-      <stop offset="100%" stop-color="#070d1a"/>
+    <linearGradient id="eaCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#16213e"/>
+      <stop offset="100%" stop-color="#0f0f23"/>
     </linearGradient>
-    <linearGradient id="eaSidebar" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#070e1c"/>
-      <stop offset="100%" stop-color="#0a1525"/>
+    <linearGradient id="eaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070d1f"/>
+      <stop offset="100%" stop-color="#0a1228"/>
     </linearGradient>
-    <linearGradient id="eaMain" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0c1829"/>
-      <stop offset="100%" stop-color="#0e1f34"/>
+    <linearGradient id="eaBtn" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4f8ef7"/>
+      <stop offset="100%" stop-color="#2563eb"/>
     </linearGradient>
-    <linearGradient id="eaPill" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="eaStrip" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
       <stop offset="100%" stop-color="#06b6d4"/>
     </linearGradient>
-    <linearGradient id="eaTopbar" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0a1220"/>
-      <stop offset="100%" stop-color="#0c1830"/>
-    </linearGradient>
+    <radialGradient id="eaGlow" cx="50%" cy="55%" r="45%">
+      <stop offset="0%" stop-color="rgba(59,130,246,0.18)"/>
+      <stop offset="100%" stop-color="rgba(59,130,246,0)"/>
+    </radialGradient>
+    <radialGradient id="eaGlowRight" cx="85%" cy="50%" r="25%">
+      <stop offset="0%" stop-color="rgba(100,149,237,0.12)"/>
+      <stop offset="100%" stop-color="rgba(100,149,237,0)"/>
+    </radialGradient>
+    <clipPath id="eaClip">
+      <rect x="10" y="38" width="580" height="260" rx="2"/>
+    </clipPath>
   </defs>
 
-  <!-- Outer card -->
-  <rect width="600" height="380" rx="12" fill="url(#eaOuter)" stroke="rgba(6,182,212,0.25)" stroke-width="1"/>
+  <!-- Outer card with border -->
+  <rect width="600" height="380" rx="14" fill="url(#eaCard)" stroke="rgba(80,120,220,0.2)" stroke-width="1.5"/>
 
-  <!-- Browser chrome bar -->
-  <rect x="10" y="10" width="580" height="28" rx="6" fill="#060d18"/>
-  <rect x="10" y="28" width="580" height="10" fill="#060d18"/>
-  <circle cx="30" cy="24" r="5" fill="#ff5f57"/>
-  <circle cx="50" cy="24" r="5" fill="#ffbd2e"/>
-  <circle cx="70" cy="24" r="5" fill="#28c840"/>
-  <rect x="90" y="17" width="290" height="14" rx="7" fill="rgba(255,255,255,0.06)"/>
-  <text x="235" y="27" font-family="system-ui, sans-serif" font-size="8.5" fill="#8892b0" text-anchor="middle">educai-web.vercel.app</text>
+  <!-- macOS browser chrome -->
+  <rect x="10" y="10" width="580" height="28" rx="6" fill="#111827"/>
+  <rect x="10" y="30" width="580" height="8" fill="#111827"/>
+  <!-- Traffic lights -->
+  <circle cx="32" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="53" cy="24" r="5.5" fill="#ffbd2e"/>
+  <circle cx="74" cy="24" r="5.5" fill="#28c840"/>
+  <!-- URL bar -->
+  <rect x="148" y="16" width="300" height="16" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="298" y="27.5" font-family="system-ui, sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">educai-web.vercel.app</text>
 
-  <!-- Browser content area -->
-  <rect x="10" y="38" width="580" height="264" fill="url(#eaMain)"/>
+  <!-- Content area -->
+  <rect x="10" y="38" width="580" height="260" fill="url(#eaBg)" clip-path="url(#eaClip)"/>
+  <!-- Radial glows -->
+  <rect x="10" y="38" width="580" height="260" fill="url(#eaGlow)" clip-path="url(#eaClip)"/>
+  <rect x="10" y="38" width="580" height="260" fill="url(#eaGlowRight)" clip-path="url(#eaClip)"/>
 
-  <!-- App top bar -->
-  <rect x="10" y="38" width="580" height="28" fill="url(#eaTopbar)"/>
-  <text x="30" y="57" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#22d3ee">EducAI</text>
-  <text x="100" y="57" font-family="system-ui, sans-serif" font-size="10" fill="rgba(34,211,238,0.5)">AI Study Abroad Platform</text>
-  <!-- Top right user -->
-  <circle cx="570" cy="52" r="8" fill="rgba(124,58,237,0.4)" stroke="rgba(167,139,250,0.5)" stroke-width="1"/>
-  <text x="570" y="56" font-family="system-ui, sans-serif" font-size="8" fill="#c4b5fd" text-anchor="middle">P</text>
+  <!-- Stars -->
+  <circle cx="55"  cy="60"  r="1.1" fill="rgba(255,255,255,0.55)"/>
+  <circle cx="148" cy="52"  r="0.8" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="234" cy="70"  r="0.9" fill="rgba(255,255,255,0.35)"/>
+  <circle cx="315" cy="46"  r="1"   fill="rgba(255,255,255,0.45)"/>
+  <circle cx="432" cy="62"  r="1.2" fill="rgba(255,255,255,0.5)"/>
+  <circle cx="512" cy="52"  r="0.7" fill="rgba(255,255,255,0.3)"/>
+  <circle cx="558" cy="78"  r="1"   fill="rgba(255,255,255,0.4)"/>
+  <circle cx="72"  cy="180" r="0.9" fill="rgba(255,255,255,0.25)"/>
+  <circle cx="530" cy="150" r="1.1" fill="rgba(100,149,237,0.5)"/>
+  <circle cx="555" cy="210" r="1.5" fill="rgba(100,149,237,0.55)"/>
+  <circle cx="540" cy="230" r="0.8" fill="rgba(100,149,237,0.35)"/>
+  <circle cx="88"  cy="240" r="0.8" fill="rgba(255,255,255,0.2)"/>
+  <circle cx="168" cy="265" r="0.7" fill="rgba(255,255,255,0.18)"/>
 
-  <!-- Left sidebar -->
-  <rect x="10" y="66" width="112" height="236" fill="url(#eaSidebar)"/>
-  <!-- Sidebar items -->
-  <!-- Active: Dashboard -->
-  <rect x="14" y="76" width="104" height="22" rx="4" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.3)" stroke-width="1"/>
-  <text x="48" y="91" font-family="system-ui, sans-serif" font-size="9.5" font-weight="600" fill="#22d3ee">Dashboard</text>
-  <!-- Universities -->
-  <text x="48" y="114" font-family="system-ui, sans-serif" font-size="9.5" fill="rgba(136,146,176,0.7)">Universities</text>
-  <!-- Scholarships -->
-  <text x="48" y="134" font-family="system-ui, sans-serif" font-size="9.5" fill="rgba(136,146,176,0.7)">Scholarships</text>
-  <!-- Visa Timeline -->
-  <text x="48" y="154" font-family="system-ui, sans-serif" font-size="9.5" fill="rgba(136,146,176,0.7)">Visa Timeline</text>
-  <!-- Professors -->
-  <text x="48" y="174" font-family="system-ui, sans-serif" font-size="9.5" fill="rgba(136,146,176,0.7)">Professors</text>
-  <!-- Chat -->
-  <rect x="14" y="182" width="104" height="22" rx="4" fill="rgba(167,139,250,0.12)"/>
-  <text x="48" y="197" font-family="system-ui, sans-serif" font-size="9.5" fill="#a78bfa">AI Chat</text>
-  <!-- Generate SOP -->
-  <text x="48" y="220" font-family="system-ui, sans-serif" font-size="9.5" fill="rgba(136,146,176,0.7)">SOP Builder</text>
-  <!-- CV Builder -->
-  <text x="48" y="240" font-family="system-ui, sans-serif" font-size="9.5" fill="rgba(136,146,176,0.7)">CV Builder</text>
+  <!-- App navbar -->
+  <rect x="10" y="38" width="580" height="28" fill="rgba(7,13,31,0.85)"/>
+  <!-- Logo -->
+  <text x="28" y="57" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#e5eeff">Educ</text>
+  <text x="65" y="57" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#60a5fa">AI</text>
+  <!-- Nav links -->
+  <text x="272" y="57" font-family="system-ui, sans-serif" font-size="9.5" fill="rgba(156,175,220,0.75)" text-anchor="middle">Features</text>
+  <text x="338" y="57" font-family="system-ui, sans-serif" font-size="9.5" fill="rgba(156,175,220,0.75)" text-anchor="middle">How it works</text>
+  <!-- Sign in -->
+  <text x="490" y="57" font-family="system-ui, sans-serif" font-size="9.5" fill="rgba(156,175,220,0.75)" text-anchor="middle">Sign in</text>
+  <!-- Get started btn -->
+  <rect x="519" y="44" width="64" height="17" rx="8.5" fill="url(#eaBtn)"/>
+  <text x="551" y="55.5" font-family="system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#fff" text-anchor="middle">Get started</text>
 
-  <!-- Main content area -->
-  <!-- Chat interface -->
-  <text x="140" y="84" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="rgba(34,211,238,0.7)">AI Assistant</text>
-  <text x="140" y="96" font-family="system-ui, sans-serif" font-size="8.5" fill="rgba(136,146,176,0.5)">Powered by multi-LLM backend · GPT-4 / Claude / Gemini</text>
+  <!-- Badge pill -->
+  <rect x="213" y="78" width="172" height="15" rx="7.5" fill="rgba(37,99,235,0.15)" stroke="rgba(96,165,250,0.4)" stroke-width="1"/>
+  <circle cx="224" cy="85.5" r="3.5" fill="#60a5fa"/>
+  <text x="305" y="88.5" font-family="system-ui, sans-serif" font-size="7.5" fill="#93c5fd" text-anchor="middle" letter-spacing="1.2">STUDY ABROAD INTELLIGENCE</text>
 
-  <!-- Chat bubbles area bg -->
-  <rect x="132" y="102" width="450" height="142" rx="6" fill="rgba(0,0,0,0.25)" stroke="rgba(6,182,212,0.1)" stroke-width="1"/>
+  <!-- Hero: line 1 light -->
+  <text x="295" y="116" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="300" fill="rgba(210,225,255,0.5)" text-anchor="middle">Study abroad,</text>
+  <!-- Hero: line 2 bold -->
+  <text x="295" y="145" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#f0f4ff" text-anchor="middle">without the</text>
+  <!-- Hero: line 3 bold -->
+  <text x="295" y="174" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#f0f4ff" text-anchor="middle">chaos</text>
 
-  <!-- User message bubble -->
-  <rect x="258" y="110" width="318" height="34" rx="8" fill="rgba(124,58,237,0.25)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
-  <text x="420" y="124" font-family="system-ui, sans-serif" font-size="9" fill="#c4b5fd" text-anchor="middle">Find me CS programs in Germany under $5,000/yr</text>
-  <text x="420" y="138" font-family="system-ui, sans-serif" font-size="8" fill="rgba(196,181,253,0.5)" text-anchor="middle">Budget under $5K · 2-year master's · English-taught</text>
+  <!-- Subtitle -->
+  <text x="295" y="196" font-family="system-ui, sans-serif" font-size="9" fill="rgba(156,175,220,0.65)" text-anchor="middle">EducAI handles program matching, scholarships, documents,</text>
+  <text x="295" y="208" font-family="system-ui, sans-serif" font-size="9" fill="rgba(156,175,220,0.65)" text-anchor="middle">visas, and job search — so you can focus on getting in.</text>
 
-  <!-- AI response bubble -->
-  <rect x="140" y="154" width="348" height="40" rx="8" fill="rgba(6,182,212,0.12)" stroke="rgba(6,182,212,0.25)" stroke-width="1"/>
-  <text x="310" y="168" font-family="system-ui, sans-serif" font-size="9" fill="#67e8f9" text-anchor="middle">&#x2728; Found 12 matching programs — here are the top 3</text>
-  <text x="310" y="183" font-family="system-ui, sans-serif" font-size="8" fill="rgba(103,232,249,0.6)" text-anchor="middle">Sorted by: tuition cost · language · ranking</text>
-  <!-- AI label -->
-  <rect x="140" y="154" width="22" height="22" rx="6" fill="rgba(6,182,212,0.3)"/>
-  <text x="151" y="169" font-family="system-ui, sans-serif" font-size="8" font-weight="700" fill="#22d3ee" text-anchor="middle">AI</text>
+  <!-- CTA -->
+  <rect x="170" y="218" width="100" height="22" rx="11" fill="url(#eaBtn)"/>
+  <text x="220" y="232" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#fff" text-anchor="middle">Get started →</text>
+  <text x="348" y="232" font-family="system-ui, sans-serif" font-size="10" fill="rgba(156,175,220,0.65)" text-anchor="middle">See how it works →</text>
 
-  <!-- Typing indicator -->
-  <text x="150" y="215" font-family="system-ui, sans-serif" font-size="8" fill="rgba(136,146,176,0.4)">AI is ready · Fallback: Gemini Pro active</text>
-  <!-- Input box -->
-  <rect x="140" y="220" width="434" height="20" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(6,182,212,0.2)" stroke-width="1"/>
-  <text x="155" y="233" font-family="system-ui, sans-serif" font-size="9" fill="rgba(136,146,176,0.35)">Ask anything about studying abroad...</text>
-  <!-- Send button -->
-  <rect x="556" y="222" width="14" height="16" rx="3" fill="rgba(6,182,212,0.4)"/>
-  <text x="563" y="233" font-family="system-ui, sans-serif" font-size="9" fill="#22d3ee" text-anchor="middle">&#x27A4;</text>
+  <!-- Trust row -->
+  <circle cx="155" cy="252" r="4.5" fill="none" stroke="#60a5fa" stroke-width="1.2"/>
+  <text x="155.5" y="254.5" font-family="system-ui, sans-serif" font-size="6.5" fill="#60a5fa" text-anchor="middle">✓</text>
+  <text x="170" y="255" font-family="system-ui, sans-serif" font-size="8" fill="rgba(140,170,220,0.5)">No credit card required</text>
 
-  <!-- University result cards row -->
-  <text x="140" y="264" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="rgba(103,232,249,0.6)">Top matches</text>
-  <!-- Card 1 -->
-  <rect x="140" y="270" width="138" height="26" rx="4" fill="rgba(6,182,212,0.1)" stroke="rgba(6,182,212,0.2)" stroke-width="1"/>
-  <text x="150" y="281" font-family="system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#67e8f9">TU Munich</text>
-  <text x="150" y="291" font-family="system-ui, sans-serif" font-size="7.5" fill="rgba(136,146,176,0.6)">Rank #1 · Tuition: Free</text>
-  <!-- Card 2 -->
-  <rect x="284" y="270" width="138" height="26" rx="4" fill="rgba(6,182,212,0.1)" stroke="rgba(6,182,212,0.2)" stroke-width="1"/>
-  <text x="294" y="281" font-family="system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#67e8f9">KIT Karlsruhe</text>
-  <text x="294" y="291" font-family="system-ui, sans-serif" font-size="7.5" fill="rgba(136,146,176,0.6)">Rank #2 · Tuition: $500/yr</text>
-  <!-- Card 3 -->
-  <rect x="428" y="270" width="152" height="26" rx="4" fill="rgba(6,182,212,0.1)" stroke="rgba(6,182,212,0.2)" stroke-width="1"/>
-  <text x="438" y="281" font-family="system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#67e8f9">TU Berlin</text>
-  <text x="438" y="291" font-family="system-ui, sans-serif" font-size="7.5" fill="rgba(136,146,176,0.6)">Rank #3 · Tuition: Free</text>
+  <circle cx="295" cy="252" r="4.5" fill="none" stroke="#60a5fa" stroke-width="1.2"/>
+  <text x="295.5" y="254.5" font-family="system-ui, sans-serif" font-size="6.5" fill="#60a5fa" text-anchor="middle">✓</text>
+  <text x="310" y="255" font-family="system-ui, sans-serif" font-size="8" fill="rgba(140,170,220,0.5)">Free to start</text>
 
-  <!-- Bottom label strip -->
-  <rect x="0" y="308" width="600" height="72" rx="12" fill="rgba(0,0,0,0.35)"/>
-  <rect x="0" y="308" width="600" height="4" fill="url(#eaPill)"/>
-  <text x="20" y="335" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#f0f4ff">EducAI</text>
-  <text x="20" y="353" font-family="system-ui, sans-serif" font-size="10" fill="#8892b0">AI-powered study abroad guidance · Multi-LLM backend</text>
+  <circle cx="396" cy="252" r="4.5" fill="none" stroke="#60a5fa" stroke-width="1.2"/>
+  <text x="396.5" y="254.5" font-family="system-ui, sans-serif" font-size="6.5" fill="#60a5fa" text-anchor="middle">✓</text>
+  <text x="411" y="255" font-family="system-ui, sans-serif" font-size="8" fill="rgba(140,170,220,0.5)">Real program data</text>
+
+  <!-- Scroll -->
+  <text x="295" y="283" font-family="system-ui, sans-serif" font-size="7" fill="rgba(140,170,220,0.28)" text-anchor="middle" letter-spacing="2.5">SCROLL</text>
+  <line x1="295" y1="286" x2="295" y2="296" stroke="rgba(140,170,220,0.2)" stroke-width="1"/>
+
+  <!-- Bottom strip separator line -->
+  <rect x="0" y="298" width="600" height="82" rx="14" fill="rgba(5,8,20,0.55)"/>
+  <rect x="0" y="298" width="600" height="3.5" fill="url(#eaStrip)"/>
+
+  <!-- Project name & subtitle -->
+  <text x="22" y="328" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="700" fill="#e8eeff">EducAI</text>
+  <text x="22" y="348" font-family="system-ui, sans-serif" font-size="10" fill="#6b7a9f">AI-powered study abroad platform · Bangladesh</text>
+
   <!-- Tech pills -->
-  <rect x="310" y="318" width="50" height="18" rx="9" fill="rgba(124,58,237,0.2)" stroke="rgba(124,58,237,0.4)" stroke-width="1"/>
-  <text x="335" y="330" font-family="system-ui, sans-serif" font-size="9" fill="#a78bfa" text-anchor="middle">Next.js</text>
-  <rect x="366" y="318" width="54" height="18" rx="9" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.35)" stroke-width="1"/>
-  <text x="393" y="330" font-family="system-ui, sans-serif" font-size="9" fill="#67e8f9" text-anchor="middle">FastAPI</text>
-  <rect x="426" y="318" width="58" height="18" rx="9" fill="rgba(124,58,237,0.2)" stroke="rgba(124,58,237,0.4)" stroke-width="1"/>
-  <text x="455" y="330" font-family="system-ui, sans-serif" font-size="9" fill="#a78bfa" text-anchor="middle">PostgreSQL</text>
-  <rect x="490" y="318" width="50" height="18" rx="9" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.35)" stroke-width="1"/>
-  <text x="515" y="330" font-family="system-ui, sans-serif" font-size="9" fill="#67e8f9" text-anchor="middle">Docker</text>
+  <rect x="328" y="314" width="52" height="19" rx="9.5" fill="rgba(59,130,246,0.15)" stroke="rgba(59,130,246,0.45)" stroke-width="1"/>
+  <text x="354" y="326.5" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd" text-anchor="middle">Next.js</text>
+
+  <rect x="386" y="314" width="50" height="19" rx="9.5" fill="rgba(6,182,212,0.13)" stroke="rgba(6,182,212,0.4)" stroke-width="1"/>
+  <text x="411" y="326.5" font-family="system-ui, sans-serif" font-size="9" fill="#67e8f9" text-anchor="middle">FastAPI</text>
+
+  <rect x="442" y="314" width="46" height="19" rx="9.5" fill="rgba(124,58,237,0.18)" stroke="rgba(124,58,237,0.45)" stroke-width="1"/>
+  <text x="465" y="326.5" font-family="system-ui, sans-serif" font-size="9" fill="#c4b5fd" text-anchor="middle">Python</text>
+
+  <rect x="494" y="314" width="48" height="19" rx="9.5" fill="rgba(59,130,246,0.12)" stroke="rgba(59,130,246,0.35)" stroke-width="1"/>
+  <text x="518" y="326.5" font-family="system-ui, sans-serif" font-size="9" fill="#93c5fd" text-anchor="middle">Docker</text>
+
+  <rect x="548" y="314" width="40" height="19" rx="9.5" fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.35)" stroke-width="1"/>
+  <text x="568" y="326.5" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7" text-anchor="middle">PgSQL</text>
 </svg>

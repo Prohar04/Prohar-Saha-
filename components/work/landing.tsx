@@ -24,10 +24,10 @@ export default function Landing(): JSX.Element {
           <div className="col-span-12 md:col-span-7 lg:col-span-6 flex flex-col justify-center items-center">
             {/* Hero Header */}
             <div className="items-center w-3/4 relative">
-              <HeaderSmall text="Where is he headed?" />
+              <HeaderSmall text="Where is Prohar headed?" />
               <h1 className="sm:w-4/5 mb-3 mt-1 text-7xl sm:text-5xl md:text-7xl lg:text-5xl font-normal tracking-wide text-white leading-normal lg:leading-7">
                 Currently a CS student at BRAC University, actively building and shipping real-world
-                projects while seeking his first professional role.
+                projects while seeking a first professional role.
               </h1>
               <h1 className="mb-3 mt-6 text-4xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-1xl font-extrabold text-white leading-none ">
                 Open to <span className="text-pink">Opportunities.</span>

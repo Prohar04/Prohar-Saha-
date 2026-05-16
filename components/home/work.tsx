@@ -1,5 +1,4 @@
 import { HeaderSmall } from '@shared-components';
-import Link from 'next/link';
 import { useContext } from 'react';
 import { PersonalDetailsContext } from 'shared/utils/contexts';
 import { PersonalDetails } from 'shared/utils/types';
@@ -23,23 +22,44 @@ export default function Work(): JSX.Element {
                 alt="Box Vector"
                 className="block absolute right-0 top-0 w-20 md:w-16 lg:w-52 opacity-60"
               />
-              <HeaderSmall text="Where is he headed?" />
+              <HeaderSmall text="Where is Prohar headed?" />
               <h1 className="mb-3 mt-1 text-7xl sm:text-5xl md:text-7xl lg:text-4xl font-normal tracking-wide text-white leading-normal lg:leading-7">
                 Currently studying CS at{' '}
                 <span className="text-pink font-bold">{personalDetails.work.company}</span>, seeking
                 opportunities as a
               </h1>
-              <h1 className="mb-3 mt-6 text-4xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-1xl font-extrabold text-white leading-none ">
+              <h1 className="mb-3 mt-6 text-4xl sm:text-2xl md:text-3xl lg:text-2xl font-extrabold text-white leading-tight">
                 {personalDetails.work.designation}
               </h1>
-              <div className="sm:ml-52 xl:ml-96">
-                <Link href="/work">
-                  <img
-                    src="/images/vectors/arrows-right.svg"
-                    alt="Next"
-                    className="w-14 mt-10 sm:mt-0 transform-all animate-translateright"
-                  />
-                </Link>
+              <div className="mt-8">
+                <style>{`
+                  @keyframes shimmer {
+                    0%   { transform: translateX(-100%) skewX(-15deg); }
+                    100% { transform: translateX(250%) skewX(-15deg); }
+                  }
+                  .btn-hire:hover .btn-shimmer {
+                    animation: shimmer 0.7s ease forwards;
+                  }
+                  @keyframes pulse-ring {
+                    0%   { box-shadow: 0 0 0 0 rgba(238,187,195,0.6); }
+                    70%  { box-shadow: 0 0 0 12px rgba(238,187,195,0); }
+                    100% { box-shadow: 0 0 0 0 rgba(238,187,195,0); }
+                  }
+                  .btn-hire { animation: pulse-ring 2.5s ease-out infinite; }
+                `}</style>
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="btn-hire group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl bg-pink px-8 py-4 font-bold text-blue transition-all duration-300 hover:shadow-light-xl hover:gap-5">
+                  <span className="btn-shimmer absolute inset-0 w-1/3 bg-white opacity-20 pointer-events-none" />
+                  <span className="relative z-10 text-7xl tracking-wide">Hire Me</span>
+                  <span className="relative z-10 text-base transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </a>
               </div>
             </div>
           </div>

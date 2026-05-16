@@ -9,16 +9,26 @@ import Certifications from './certifications';
 const HomePage = (): JSX.Element => {
   return (
     <>
-      <div className="bg-blue pt-28">
-        <div className="overflow-x-hidden">
+      <div className="bg-blue pt-28 overflow-x-hidden">
+        <section id="hero">
           <Landing />
+        </section>
+        <section id="skills">
           <Skills />
+        </section>
+        <section id="certifications">
           <Certifications />
+        </section>
+        <section id="experience">
           <Work />
+        </section>
+        <section id="projects">
           <Projects />
+        </section>
+        <section id="contact">
           <Contact />
-          <RepoDetails />
-        </div>
+        </section>
+        <RepoDetails />
       </div>
     </>
   );
