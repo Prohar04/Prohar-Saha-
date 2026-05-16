@@ -3,7 +3,7 @@
 Personal portfolio website of **Prohar Saha Polak**, a Computer Science
 undergraduate at BRAC University, Dhaka, Bangladesh.
 
-**Live:** https://prohar-saha.vercel.app
+**Live:** [https://prohar-saha.vercel.app](https://prohar-saha.vercel.app)
 
 ---
 
@@ -79,4 +79,4 @@ Before deploying, add these files to `/public/`:
 - LinkedIn: [linkedin.com/in/prohor04](https://www.linkedin.com/in/prohor04/)
 - LeetCode: [leetcode.com/u/Prohor04](https://leetcode.com/u/Prohor04/)
 - HackerRank: [hackerrank.com/profile/prohar_04](https://www.hackerrank.com/profile/prohar_04)
-- Email: sahaprohar10@gmail.com
+- Email: [sahaprohar10@gmail.com](mailto:sahaprohar10@gmail.com)
