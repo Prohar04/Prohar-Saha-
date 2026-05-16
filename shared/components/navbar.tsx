@@ -1,6 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { Menu } from 'react-feather';
 import { navlinks } from '@utils/constants';
 import { PersonalDetails } from '@utils/types';
@@ -12,27 +10,22 @@ type Props = {
 };
 
 const NavItem = ({ href, title }: Props): JSX.Element => {
-  const router = useRouter();
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const id = href.replace('#', '');
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
-    <Link href={href}>
-      <li
-        className={`
-          px-5 py-2 pt-1 md:pt-4 md:px-4 md:text-center
-          ${router.asPath === href ? 'border-b-2 md:border-none' : ''} 
-          `}>
-        <p className="transition duration-500 ease-in-out transform md:hover:-translate-y-2 text-white font-bold md:hover:text-violet">
-          {title}
-        </p>
-        <img
-          src="/images/vectors/nav_active.svg"
-          alt="nav-active"
-          className={`
-            hidden md:block md:opacity-0
-            ${router.asPath === href && 'md:opacity-100 md:w-100'}
-            `}
-        />
-      </li>
-    </Link>
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
+    <li
+      className="px-5 py-2 pt-1 md:pt-4 md:px-4 md:text-center cursor-pointer"
+      onClick={handleClick}>
+      <p className="transition duration-500 ease-in-out transform md:hover:-translate-y-2 text-white font-bold md:hover:text-violet">
+        {title}
+      </p>
+    </li>
   );
 };
 
@@ -60,15 +53,15 @@ const Navbar = (): JSX.Element => {
       <nav className="block md:flex justify-between items-center p-2 px-8">
         <div className="flex justify-between">
           <div>
-            <Link href="/">
-              <img
-                src={logo}
-                alt="logo"
-                className={`${
-                  isScreenScrolled ? 'w-1/5 md:w-3/12' : 'w-16 md:w-2/5'
-                } pl-30 my-2 transition-all transform hover:scale-75 cursor-pointer`}
-              />
-            </Link>
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
+            <img
+              src={logo}
+              alt="logo"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className={`${
+                isScreenScrolled ? 'w-1/4 md:w-1/3' : 'w-20 md:w-1/2'
+              } pl-30 my-2 transition-all transform hover:scale-75 cursor-pointer`}
+            />
           </div>
           <div className="flex md:hidden">
             <button

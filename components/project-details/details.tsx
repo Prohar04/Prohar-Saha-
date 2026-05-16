@@ -43,25 +43,35 @@ export default function Details({ project }: Props): JSX.Element {
       )}
       {project.tags && (
         <div className="text-center mb-10">
+          <style>{`
+            @keyframes marquee-ltr {
+              0%   { transform: translateX(-50%); }
+              100% { transform: translateX(0%); }
+            }
+            .marquee-track {
+              animation: marquee-ltr 18s linear infinite;
+            }
+          `}</style>
           <h1 className="text-5xl sm:text-3xl text-white font-bold mb-8">
             What <span className="text-pink">Technologies</span> are used?
           </h1>
-          <div className="flex flex-col sm:flex-row justify-center items-center text-center">
-            {project.tags.map((t): JSX.Element => {
-              const tech = technologies.find((te) => te.name === t);
-              return (
-                tech && (
-                  <div
-                    className="flex flex-col justify-center items-center text-center my-4"
-                    key={tech.name}>
-                    <img src={tech.src} alt={tech.name} className="mb-2 h-12" />
-                    <p className="text-violet lg:px-20 text-xl" key={t}>
-                      {tech && tech.name}
-                    </p>
-                  </div>
-                )
-              );
-            })}
+          <div className="overflow-hidden w-full">
+            <div className="flex marquee-track" style={{ width: 'max-content' }}>
+              {[...project.tags, ...project.tags].map((t, i): JSX.Element => {
+                const tech = technologies.find((te) => te.name === t);
+                return (
+                  tech && (
+                    <div
+                      className="flex flex-col justify-center items-center text-center mx-10"
+                      // eslint-disable-next-line react/no-array-index-key
+                      key={`${tech.name}-${i}`}>
+                      <img src={tech.src} alt={tech.name} className="mb-2 h-12" />
+                      <p className="text-violet text-xl">{tech.name}</p>
+                    </div>
+                  )
+                );
+              })}
+            </div>
           </div>
         </div>
       )}

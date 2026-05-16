@@ -1,35 +1,38 @@
-import { Button, HeaderSmall } from '@shared-components';
-import { useRouter } from 'next/router';
+import { useContext } from 'react';
+import { PersonalDetailsContext } from 'shared/utils/contexts';
+import { PersonalDetails } from 'shared/utils/types';
+import { HeaderSmall } from '@shared-components';
 
 export default function Contact(): JSX.Element {
-  const router = useRouter();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const personalDetails: PersonalDetails = useContext(PersonalDetailsContext);
   return (
     <>
-      <div className="relative h-auto py-10 lg:py-10">
-        <div className="ml-4 sm:mx-12 md:mx-16 grid grid-cols-12 gap-4 h-auto place-items-center items-center">
-          <div className="col-span-12 md:col-span-7 lg:col-span-6 flex flex-col justify-center items-center">
-            {/* Hero Header */}
-            <div className="items-center w-3/4 relative">
-              <HeaderSmall text="Meet and Greet!" />
-              <h1 className="sm:w-4/5 mb-3 mt-1 text-7xl sm:text-5xl md:text-7xl lg:text-5xl font-normal tracking-wide text-white leading-normal lg:leading-7">
-                Impressed Already? <span className="text-pink">Schedule</span> a call with him.
-                {/* Gender specific????? */}
-              </h1>
-              <h1 className="mb-3 mt-6 text-4xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-1xl font-extrabold text-white leading-none ">
-                Let’s grab a cup of coffee.
-              </h1>
-            </div>
+      <div className="relative h-auto py-10 lg:py-20">
+        <div className="ml-4 sm:mx-12 md:mx-16">
+          <div className="w-3/4 md:w-1/2 mx-auto md:mx-0 text-center md:text-left">
+            <HeaderSmall text="Get In Touch" />
+            <h1 className="mb-3 mt-1 text-3xl font-extrabold text-white leading-tight">
+              Open to <span className="text-pink">Opportunities</span>
+            </h1>
+            <p className="text-7xl font-light text-white mb-8 leading-relaxed max-w-md">
+              Inbox always open. Whether you have a project idea, a job opportunity, or just want to
+              say hi &mdash; drop a message and I&apos;ll get back to you.
+            </p>
           </div>
-          <div className="col-span-12 md:col-span-5 lg:col-span-6 flex flex-col justify-center items-center my-10 sm:mt-0">
-            <img src="/images/vectors/contact.svg" alt="" className="w-3/4" />
+          <div className="flex flex-col md:flex-row gap-6 items-center justify-center md:justify-start mt-4">
+            <a
+              href="mailto:sahaprohar10@gmail.com"
+              className="inline-block bg-pink text-blue font-bold px-10 py-4 rounded-xl transition-all hover:opacity-80 hover:shadow-light-xl text-7xl">
+              sahaprohar10@gmail.com &rarr;
+            </a>
+            <a
+              href="/resume.pdf"
+              download
+              className="inline-block border-2 border-pink text-pink font-bold px-10 py-4 rounded-xl transition-all hover:bg-pink hover:text-blue text-7xl">
+              Download Resume &darr;
+            </a>
           </div>
-        </div>
-        <div className="flex justify-center items-center w-full z-30">
-          <Button
-            type="solid"
-            text="Let's Connect! 🚀 "
-            onClickHandler={() => router.push('/connect')}
-          />
         </div>
       </div>
     </>
